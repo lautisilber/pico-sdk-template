@@ -2,6 +2,10 @@ add_executable(${PROJECT_NAME}
             hello_usb.c
             )
 
+if (NOT TARGET tinyusb_device)
+    message(FATAL_ERROR "Won't be able to output serial through USB because TinyUSB submodule is not initialized in the SDK")
+endif()
+
 # pull in common dependencies
 target_link_libraries(${PROJECT_NAME} pico_stdlib)
 
