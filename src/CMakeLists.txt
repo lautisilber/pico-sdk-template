@@ -3,7 +3,7 @@ add_executable(${PROJECT_NAME}
             )
 
 if (NOT TARGET tinyusb_device)
-    message(FATAL_ERROR "Won't be able to output serial through USB because TinyUSB submodule is not initialized in the SDK")
+message(FATAL_ERROR "Won't be able to output serial through USB because TinyUSB submodule is not initialized in the SDK. Please run command 'git submodule update --init --recursive' in the pico-sdk directory")
 endif()
 
 # pull in common dependencies
